@@ -1,5 +1,5 @@
 {
-  "name": "andreas-glaser/ppc",
+  "name": "andreas-glaser/poloniex-php-client",
   "description": "Poloniex PHP Client",
   "keywords": [
     "php",
@@ -7,7 +7,7 @@
     "rest-client",
     "poloniex"
   ],
-  "homepage": "https://github.com/andreas-glaser/ppc",
+  "homepage": "https://github.com/andreas-glaser/poloniex-php-client",
   "type": "library",
   "license": "MIT",
   "authors": [
