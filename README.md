@@ -8,7 +8,7 @@ An efficient poloniex rest api client, built on top of [guzzle](https://github.c
 
 ## Installation
 ```shell
-composer require andreas-glaser/poloniex-php-client
+composer require andreas-glaser/poloniex-php-client dev-master
 ```
 
 ## Usage
