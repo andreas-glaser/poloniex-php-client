@@ -1,0 +1,48 @@
+{
+  "name": "andreas-glaser/ppc",
+  "description": "Poloniex PHP Client",
+  "keywords": [
+    "php",
+    "api",
+    "rest-client",
+    "poloniex"
+  ],
+  "homepage": "https://github.com/andreas-glaser/ppc",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Glaser",
+      "email": "andreas.glaser@protonmail.com",
+      "homepage": "https://andreas.glaser.me"
+    }
+  ],
+  "require": {
+    "php": "^7",
+    "guzzlehttp/guzzle": "~6.0",
+    "andreas-glaser/php-helpers": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5",
+    "symfony/var-dumper": "@stable"
+  },
+  "suggest": {},
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "AndreasGlaser\\PPC\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AndreasGlaser\\PPC\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
