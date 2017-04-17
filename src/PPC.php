@@ -46,7 +46,7 @@ class PPC
         $this->apiSecret = $apiSecret;
 
         if ($this->apiKey) {
-            $this->enablePrivate = true;
+            $this->enableTrading = true;
         }
 
         $defaultOptions = [
