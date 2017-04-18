@@ -111,6 +111,27 @@ class PPCTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(is_array($result->decoded));
     }
 
+    /**
+     * @author Andreas Glaser
+     *
+     * @expectedException \LogicException
+     * @expectedExceptionMessage Trading request are not possible if api key and secret have not been set
+     */
+    public function testTradingException()
+    {
+        (new PPC())->getBalances();
+    }
+
+    /**
+     * @author Andreas Glaser
+     *
+     * @expectedException \GuzzleHttp\Exception\ClientException
+     */
+    public function testTradingExceptionWithApiKey()
+    {
+        (new PPC('dummy', 'dummy'))->getBalances();
+    }
+
 //    /**
 //     * @author Andreas Glaser
 //     * @group  this
