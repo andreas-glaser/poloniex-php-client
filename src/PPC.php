@@ -611,16 +611,16 @@ class PPC
     }
 
     /**
-     * @param int $oderNumber
+     * @param int $orderNumber
      *
      * @return \AndreasGlaser\PPC\Result
      * @author Andreas Glaser
      */
-    public function cancelLoanOffer(int $oderNumber): Result
+    public function cancelLoanOffer(int $orderNumber): Result
     {
         return $this->sendTradingRequest([
             'command'    => 'cancelLoanOffer',
-            'oderNumber' => $oderNumber,
+            'orderNumber' => $orderNumber,
         ]);
     }
 
@@ -665,16 +665,16 @@ class PPC
     }
 
     /**
-     * @param int $oderNumber
+     * @param int $orderNumber
      *
      * @return \AndreasGlaser\PPC\Result
      * @author Andreas Glaser
      */
-    public function toggleAutoRenew(int $oderNumber): Result
+    public function toggleAutoRenew(int $orderNumber): Result
     {
         return $this->sendTradingRequest([
             'command'    => 'toggleAutoRenew',
-            'oderNumber' => $oderNumber,
+            'orderNumber' => $orderNumber,
         ]);
     }
 }
