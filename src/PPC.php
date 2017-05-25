@@ -83,8 +83,8 @@ class PPC
         $mt = explode(' ', microtime());
         $params['nonce'] = $mt[1] . substr($mt[0], 2, 6);
 
-        $post_data = http_build_query($params, '', '&');
-        $sign = hash_hmac('sha512', $post_data, $this->apiSecret);
+        $postData = http_build_query($params, '', '&');
+        $sign = hash_hmac('sha512', $postData, $this->apiSecret);
 
         $options = [
             'headers'     => [
