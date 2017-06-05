@@ -207,16 +207,18 @@ class PPC
     }
 
     /**
-     * @param string $currency
+     * @param string   $currency
+     * @param int|null $limit
      *
      * @return \AndreasGlaser\PPC\Result
      * @author Andreas Glaser
      */
-    public function getLoanOrders($currency = 'BTC'): Result
+    public function getLoanOrders(string $currency = 'BTC', int $limit = null): Result
     {
         return $this->sendPublicRequest([
                 'command'  => 'returnLoanOrders',
                 'currency' => $currency,
+                'limit'    => $limit,
             ]
         );
     }
