@@ -313,9 +313,9 @@ class PPC
      */
     public function getTradeHistory(string $currencyPair = 'ALL', int $start = null, int $end = null): Result
     {
-        return $this->sendTradingRequest([
+        return $this->sendPublicRequest([
             'command'      => 'returnTradeHistory',
-            'currencyPair' => $currencyPair,
+            'currencyPair' => strtoupper($currencyPair),
             'start'        => $start,
             'end'          => $end,
         ]);
