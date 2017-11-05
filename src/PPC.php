@@ -79,24 +79,28 @@ class PPC
         if (!$this->enableTrading) {
             throw new \LogicException('Trading request are not possible if api key and secret have not been set');
         }
+        
+        do {
+            $mt = explode(' ', microtime());
+            $params['nonce'] = $mt[1] . substr($mt[0], 2, 6);
 
-        $mt = explode(' ', microtime());
-        $params['nonce'] = $mt[1] . substr($mt[0], 2, 6);
+            $postData = http_build_query($params, '', '&');
+            $sign = hash_hmac('sha512', $postData, $this->apiSecret);
 
-        $postData = http_build_query($params, '', '&');
-        $sign = hash_hmac('sha512', $postData, $this->apiSecret);
+            $options = [
+                'headers'     => [
+                    'Key'  => $this->apiKey,
+                    'Sign' => $sign,
+                ],
+                'form_params' => $params,
+            ];
 
-        $options = [
-            'headers'     => [
-                'Key'  => $this->apiKey,
-                'Sign' => $sign,
-            ],
-            'form_params' => $params,
-        ];
+            $response = $this->httpClient->post(self::RES_TRADING, $options);
 
-        $response = $this->httpClient->post(self::RES_TRADING, $options);
-
-        return new Result($response);
+            $result = new Result($response);
+        } while ($result->hasNonceError());
+        
+        return $result;
     }
 
     /**
