@@ -49,4 +49,18 @@ class Result
             }
         }
     }
+    
+    /**
+     * @return bool
+     */
+    public function hasNonceError(): bool
+    {
+        if(is_array($this->decoded) &&
+            array_key_exists('error', $this->decoded) &&
+            substr_count(($this->decoded)['error'], 'Nonce must be greater than') > 0 ){
+            return true;
+        }
+
+        return false;
+    }
 }
