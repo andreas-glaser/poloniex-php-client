@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
  * Class PPC
  *
  * @package AndreasGlaser\PPC
- * @author  Andreas Glaser
  */
 class PPC
 {
@@ -33,8 +32,6 @@ class PPC
      * @param string|null $apiKey
      * @param string|null $apiSecret
      * @param array       $guzzleClientOptions
-     *
-     * @author Andreas Glaser
      */
     public function __construct(string $apiKey = null, string $apiSecret = null, array $guzzleClientOptions = [])
     {
@@ -61,7 +58,6 @@ class PPC
 
     /**
      * @return \GuzzleHttp\Client
-     * @author Andreas Glaser
      */
     public function getClient(): Client
     {
@@ -72,7 +68,6 @@ class PPC
      * @param array $params
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function sendTradingRequest(array $params = []): Result
     {
@@ -103,7 +98,6 @@ class PPC
      * @param array $params
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function sendPublicRequest(array $params = []): Result
     {
@@ -114,7 +108,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getTicker(): Result
     {
@@ -125,7 +118,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function get24hVolume(): Result
     {
@@ -139,7 +131,6 @@ class PPC
      * @param int    $depth
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getOrderBook(string $currencyPair = 'ALL', int $depth = 10): Result
     {
@@ -156,7 +147,6 @@ class PPC
      * @param int    $end
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getPublicTradeHistory(string $currencyPair = 'ALL', int $start, int $end): Result
     {
@@ -176,7 +166,6 @@ class PPC
      * @param int    $period
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getChartData(string $currencyPair = 'ALL', int $start, int $end, int $period): Result
     {
@@ -196,7 +185,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getCurrencies(): Result
     {
@@ -211,7 +199,6 @@ class PPC
      * @param int|null $limit
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getLoanOrders(string $currency = 'BTC', int $limit = null): Result
     {
@@ -225,7 +212,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getBalances(): Result
     {
@@ -238,7 +224,6 @@ class PPC
      * @param string $account
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getCompleteBalances($account = 'exchange'): Result
     {
@@ -250,7 +235,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getDepositAddresses(): Result
     {
@@ -263,7 +247,6 @@ class PPC
      * @param string $currency
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function generateNewAddress(string $currency): Result
     {
@@ -278,7 +261,6 @@ class PPC
      * @param int $end
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getDepositsWithdrawals(int $start, int $end): Result
     {
@@ -293,7 +275,6 @@ class PPC
      * @param string $currencyPair
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getOpenOrders(string $currencyPair = 'ALL'): Result
     {
@@ -309,7 +290,6 @@ class PPC
      * @param int|null $end
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getTradeHistory(string $currencyPair = 'ALL', int $start = null, int $end = null): Result
     {
@@ -325,7 +305,6 @@ class PPC
      * @param string $orderNumber
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getOrderTrades(string $orderNumber = 'ALL'): Result
     {
@@ -344,7 +323,6 @@ class PPC
      * @param int       $postOnly
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      *
      * You may optionally set "fillOrKill", "immediateOrCancel", "postOnly" to 1.
      * A fill-or-kill order will either fill in its entirety or be completely aborted.
@@ -376,7 +354,6 @@ class PPC
      * @param int       $postOnly
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      *
      * You may optionally set "fillOrKill", "immediateOrCancel", "postOnly" to 1.
      * A fill-or-kill order will either fill in its entirety or be completely aborted.
@@ -403,7 +380,6 @@ class PPC
      * @param string $orderNumber
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function cancelOrder(string $orderNumber): Result
     {
@@ -421,7 +397,6 @@ class PPC
      * @param int|null $immediateOrCancel
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function moveOrder(string $orderNumber, $rate, $amount = null, int $postOnly = null, int $immediateOrCancel = null): Result
     {
@@ -442,7 +417,6 @@ class PPC
      * @param string|null $paymentId
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function withdraw(string $currency, $amount, string $address, string $paymentId = null): Result
     {
@@ -457,7 +431,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getFeeInfo(): Result
     {
@@ -470,7 +443,6 @@ class PPC
      * @param string $account
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getAvailableAccountBalances(string $account = 'exchange'): Result
     {
@@ -482,7 +454,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getTradableBalances(): Result
     {
@@ -498,7 +469,6 @@ class PPC
      * @param string $toAccount
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function transferBalance(string $currency, $amount, string $fromAccount, string $toAccount): Result
     {
@@ -513,7 +483,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getMarginAccountSummary(): Result
     {
@@ -529,7 +498,6 @@ class PPC
      * @param null   $lendingRate
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function marginBuy(string $currencyPair, $rate, $amount, $lendingRate = null): Result
     {
@@ -549,7 +517,6 @@ class PPC
      * @param null   $lendingRate
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function marginSell(string $currencyPair, $rate, $amount, $lendingRate = null): Result
     {
@@ -566,7 +533,6 @@ class PPC
      * @param string $currencyPair
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getMarginPosition(string $currencyPair = 'ALL'): Result
     {
@@ -580,7 +546,6 @@ class PPC
      * @param string $currencyPair
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function closeMarginPosition(string $currencyPair): Result
     {
@@ -598,7 +563,6 @@ class PPC
      * @param int    $autoRenew
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function createLoanOffer(string $currency, $amount, $lendingRate, $duration, $autoRenew = 0): Result
     {
@@ -616,19 +580,17 @@ class PPC
      * @param int $orderNumber
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function cancelLoanOffer(int $orderNumber): Result
     {
         return $this->sendTradingRequest([
-            'command'    => 'cancelLoanOffer',
+            'command'     => 'cancelLoanOffer',
             'orderNumber' => $orderNumber,
         ]);
     }
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getOpenLoanOffers(): Result
     {
@@ -639,7 +601,6 @@ class PPC
 
     /**
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getActiveLoans(): Result
     {
@@ -654,7 +615,6 @@ class PPC
      * @param int|null $limit
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function getLendingHistory(int $start, int $end, int $limit = null): Result
     {
@@ -670,12 +630,11 @@ class PPC
      * @param int $orderNumber
      *
      * @return \AndreasGlaser\PPC\Result
-     * @author Andreas Glaser
      */
     public function toggleAutoRenew(int $orderNumber): Result
     {
         return $this->sendTradingRequest([
-            'command'    => 'toggleAutoRenew',
+            'command'     => 'toggleAutoRenew',
             'orderNumber' => $orderNumber,
         ]);
     }

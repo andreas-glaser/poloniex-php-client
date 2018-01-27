@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
  * Class Result
  *
  * @package AndreasGlaser\PPC
- * @author  Andreas Glaser
+
  */
 class Result
 {
@@ -33,8 +33,6 @@ class Result
      * Result constructor.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     *
-     * @author Andreas Glaser
      */
     public function __construct(ResponseInterface $response)
     {
